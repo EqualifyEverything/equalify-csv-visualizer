@@ -24,15 +24,6 @@ summary = summary.sort_values(by="Number of Unique Nodes", ascending=False)
 st.subheader("Node Counts by URL")
 st.dataframe(url_summary)
 
-# Select a URL to view node details
-st.subheader("View Node Details by URL")
-selected_url = st.selectbox("Select a URL", url_summary["URL"].tolist())
-
-if selected_url:
-    filtered_nodes = df[df["URL"] == selected_url][["Node ID", "Messages", "HTML", "Targets"]]
-    st.write(f"Nodes for URL: {selected_url}")
-    st.dataframe(filtered_nodes)
-
 # Separate messages into violations and warnings
 violations = summary[summary["Message"].str.lower().str.startswith("violation:")]
 warnings = summary[summary["Message"].str.lower().str.startswith("warning:")]
