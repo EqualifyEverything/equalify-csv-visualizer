@@ -1,2 +1,2 @@
-# equalify-csv-visualizer
+# Equalify CSV Visualizer
 Visualize Equalify CSV Output
